@@ -35,7 +35,7 @@
                 <li><a href="#" class="menu__link">about us</a></li>
                 <li><a href="#" class="menu__link">booking</a></li>
               </ul>
-              <button class="button">Sign up</button>
+              <button id="btnSignUp" class="button">Sign up</button>
             </nav>
           </div>
         </div>
@@ -47,106 +47,204 @@
           </h1>
           <button class="hero__button">Booking</button>
         </section>
+        <!------------modal------->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="modal__form">
+              <p class="modal__title">
+                Leave your details, we will call you back
+              </p>
+              <label class="modal__lable"
+                >Name
+                <input class="modal__input" type="text" />
+                <svg class="modal__icon">
+                  <use href="./images/icons/sprite.svg#modal-contact"></use>
+                </svg>
+              </label>
+              <label class="modal__lable"
+                >Phone
+                <input class="modal__input" type="tel" />
+                <svg class="modal__icon">
+                  <use href="./images/icons/sprite.svg#modal-phone"></use>
+                </svg>
+              </label>
+              <label class="modal__lable"
+                >Mail
+                <input class="modal__input" type="email" />
+                <svg class="modal__icon">
+                  <use href="./images/icons/sprite.svg#modal-mail"></use>
+                </svg>
+              </label>
+              <label class="modal__lable modal__comment"
+                >comment
+                <textarea
+                  class="modal__input modal__textarea"
+                  placeholder="Please enter text"
+                ></textarea>
+              </label>
+              <input type="checkbox" class="modal__checkbox" id="cheking" />
+              <label class="modal__checkbox-agree" for="cheking">
+                I agree with the mailing list and accept &nbsp;
+                <a href="#">Agreement conditions</a>
+              </label>
+              <button id="button-send" class="button-send" type="button">
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!----------------- carousel ------------>
         <h1 class="title__karusel">
           Some our recommended place around the world
         </h1>
-        <section class="slide__container">
-          <div class="slide__content">
-            <div class="card__wrapper">
-              <div class="card">
-                <div class="image__content">
-                  <span class="overlay"></span>
-                  <div class="card__image">
-                    <img
-                      src="./images/raja-ampat.jpg"
-                      alt="raja-ampat"
-                      class="card__img"
-                    />
+        <section class="bGColor">
+          <div class="slide__container">
+            <div class="slide__content">
+              <div class="card__wrapper">
+                <div class="card">
+                  <div class="image__content">
+                    <span class="overlay"></span>
+                    <div class="card__image">
+                      <img
+                        src="./images/raja-ampat.jpg"
+                        alt="raja-ampat"
+                        class="card__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <h2 class="title__article">Raja Ampat, Indonesia</h2>
+                    <h3 class="title__discription">Underwater Tourism</h3>
+                    <h3 class="title__pax">
+                      <span class="title__price">$750/</span>Pax
+                    </h3>
                   </div>
                 </div>
-                <div class="card__content">
-                  <h2 class="title__article">Raja Ampat, Indonesia</h2>
-                  <h3 class="title__discription">Underwater Tourism</h3>
-                  <h3 class="title__pax">
-                    <span class="title__price">$750/</span>Pax
-                  </h3>
+                <div class="card">
+                  <div class="image__content">
+                    <span class="overlay"></span>
+                    <div class="card__image">
+                      <img
+                        src="./images/machu-picchu.jpg"
+                        alt="machu-picchu"
+                        class="card__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <h2 class="title__article">Machu Piccu, Mexico</h2>
+                    <h3 class="title__discription">Cultural Tourism</h3>
+                    <h3 class="title__pax">
+                      <span class="title__price">$1200/</span>Pax
+                    </h3>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image__content">
+                    <span class="overlay"></span>
+                    <div class="card__image">
+                      <img
+                        src="./images/nusa-penida.jpg"
+                        alt="nusa-penida"
+                        class="card__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <h2 class="title__article">Nusa Penida, Indonesia</h2>
+                    <h3 class="title__discription">Beach Tourism</h3>
+                    <h3 class="title__pax">
+                      <span class="title__price">$670/</span>Pax
+                    </h3>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image__content">
+                    <span class="overlay"></span>
+                    <div class="card__image">
+                      <img
+                        src="./images/bromo-tengger.jpg"
+                        alt="bromo-tengger"
+                        class="card__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <h2 class="title__article">Bromo Tengger, Indonesia</h2>
+                    <h3 class="title__discription">Mountain Tourism</h3>
+                    <h3 class="title__pax">
+                      <span class="title__price">$350/</span>Pax
+                    </h3>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image__content">
+                    <span class="overlay"></span>
+                    <div class="card__image">
+                      <img
+                        src="./images/cuba.jpg"
+                        alt="cuba"
+                        class="card__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <h2 class="title__article">Havana, Cuba</h2>
+                    <h3 class="title__discription">Cultural Tourism</h3>
+                    <h3 class="title__pax">
+                      <span class="title__price">$850/</span>Pax
+                    </h3>
+                  </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="image__content">
-                  <span class="overlay"></span>
-                  <div class="card__image">
-                    <img
-                      src="./images/machu-picchu.jpg"
-                      alt="machu-picchu"
-                      class="card__img"
-                    />
-                  </div>
-                </div>
-                <div class="card__content">
-                  <h2 class="title__article">Machu Piccu, Mexico</h2>
-                  <h3 class="title__discription">Cultural Tourism</h3>
-                  <h3 class="title__pax">
-                    <span class="title__price">$1200/</span>Pax
-                  </h3>
-                </div>
-              </div>
-              <div class="card">
-                <div class="image__content">
-                  <span class="overlay"></span>
-                  <div class="card__image">
-                    <img
-                      src="./images/nusa-penida.jpg"
-                      alt="nusa-penida"
-                      class="card__img"
-                    />
-                  </div>
-                </div>
-                <div class="card__content">
-                  <h2 class="title__article">Nusa Penida, Indonesia</h2>
-                  <h3 class="title__discription">Beach Tourism</h3>
-                  <h3 class="title__pax">
-                    <span class="title__price">$670/</span>Pax
-                  </h3>
-                </div>
-              </div>
-              <div class="card">
-                <div class="image__content">
-                  <span class="overlay"></span>
-                  <div class="card__image">
-                    <img
-                      src="./images/bromo-tengger.jpg"
-                      alt="bromo-tengger"
-                      class="card__img"
-                    />
-                  </div>
-                </div>
-                <div class="card__content">
-                  <h2 class="title__article">Bromo Tengger, Indonesia</h2>
-                  <h3 class="title__discription">Mountain Tourism</h3>
-                  <h3 class="title__pax">
-                    <span class="title__price">$350/</span>Pax
-                  </h3>
-                </div>
-              </div>
-              <div class="card">
-                <div class="image__content">
-                  <span class="overlay"></span>
-                  <div class="card__image">
-                    <img src="./images/cuba.jpg" alt="cuba" class="card__img" />
-                  </div>
-                </div>
-                <div class="card__content">
-                  <h2 class="title__article">Havana, Cuba</h2>
-                  <h3 class="title__discription">Cultural Tourism</h3>
-                  <h3 class="title__pax">
-                    <span class="title__price">$850/</span>Pax
-                  </h3>
-                </div>
+              <a class="prev" id="leftBtn">&#10094;</a>
+              <a class="next" id="rightBtn">&#10095;</a>
+              <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
               </div>
             </div>
           </div>
-          <div></div>
+        </section>
+        <section class="section__clients">
+          <div class="clients__alltitles">
+            <h3 class="clients__title">Our Partnership</h3>
+            <h2 class="clients__sutitle">
+              Some our best partnership travel service worldwide
+            </h2>
+          </div>
+          <div class="clients__logos">
+            <div>
+              <svg class="icon__client">
+                <use xlink:href="./images/sprite.svg#logo1"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon__client">
+                <use xlink:href="./images/sprite.svg#logo2"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon__client">
+                <use xlink:href="./images/sprite.svg#logo3"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon__client">
+                <use xlink:href="./images/sprite.svg#logo4"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon__client">
+                <use xlink:href="./images/sprite.svg#logo5"></use>
+              </svg>
+            </div>
+          </div>
         </section>
       </main>
       <footer class="footer">
@@ -180,7 +278,19 @@
         </div>
         <div class="footer__rights--container">
           <div class="line"></div>
-          <div class="footer__rigts">All right reserved Olga’sTravel</div>
+
+          <div class="footer__rigts">
+            <div class="container__rigts">
+              All right reserved Olga’sTravel
+              <div class="content__heart">
+                <img
+                  class="footer__heart"
+                  src="./images/hearth.svg"
+                  alt="hearth"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

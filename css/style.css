@@ -67,7 +67,7 @@ body._lock {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 3;
   background-color: var(--background-color);
   color: antiquewhite;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -87,7 +87,7 @@ body._lock {
   font-family: cursive;
   color: var(--second-color);
   position: relative;
-  z-index: 5;
+  /* z-index: 5; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -183,29 +183,163 @@ body._lock {
 .title__karusel {
   margin: 16px auto;
   text-align: center;
+  font-weight: 700;
+  font-size: 20px;
   padding-left: 25px;
   padding-right: 25px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .slide__container {
+  width: 100%;
+  background-color: #efefef;
+}
+.bGColor {
   background-color: #efefef;
 }
 .slide__content {
   /* margin: 0 40px; */
+  position: relative;
   width: 100%;
   padding: 60px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 .card__wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+.prev,
+.next {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .slide__container {
+    width: 70%;
+    /* border: 5px solid black; */
+    margin: auto;
+    overflow: hidden;
+  }
+  .slide__content {
+    /* margin: 0 40px; */
+    position: relative;
+    width: 100%;
+    /* padding: 60px 50px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  .card__wrapper {
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+  }
+  .card {
+    margin-right: 20px;
+    /* border: 1px solid gray; */
+  }
+  .transformAnimation {
+    transition: 0.4s all ease-in-out;
+  }
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 230px;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--second-color);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 20px;
+
+    /* user-select: none; */
+    background-color: var(--background-color);
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+  }
+  .prev {
+    left: 0;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: var(--second-color);
+    color: var(--background-color);
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--second-color);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: var(--background-color);
+  }
+  .clients__alltitles {
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+  }
+  .clients__title {
+    margin: 16px auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    opacity: 0.8;
+  }
+  .clients__sutitle {
+    margin: 16px auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    opacity: 0.2;
+  }
+  .clients__logos {
+    display: flex;
+    justify-content: space-around;
+  }
+  .icon__client {
+    width: 100px;
+    fill: darkgray;
+  }
+  .icon__client:hover,
+  .icon__client:focus {
+    fill: var(--second-color);
+    transition: fill 0.6s ease-in-out;
+  }
+}
 @media screen and (max-width: 1023px) {
   .card__wrapper {
     flex-wrap: wrap;
+  }
+  .section__clients {
+    display: none;
   }
 }
 .card {
@@ -393,7 +527,9 @@ body._lock {
   font-weight: 400;
   padding-bottom: 10px;
 }
+
 .footer__rigts {
+  /* position: relative; */
   height: 40px;
   display: flex;
   color: #efefef;
@@ -403,6 +539,39 @@ body._lock {
   /* padding-top: 20px; */
   font-size: 16px;
   font-weight: 400;
+}
+/* .footer__rigts::after {
+  content: "";
+} */
+.container__rigts {
+  position: relative;
+}
+.content__heart {
+  top: 0%;
+  left: 103%;
+  position: absolute;
+}
+/* @media screen and (max-width: 663px) {
+  .content__heart {
+    left: 68%;
+  }
+} */
+.footer__heart {
+  animation-name: footer__heart-anim;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes footer__heart-anim {
+  0% {
+    width: 14px;
+  }
+  /* 50% {
+    width: 15px;
+  } */
+  100% {
+    width: 20px;
+  }
 }
 .line {
   width: 100%;
@@ -440,7 +609,7 @@ body._lock {
 }
 @media screen and (max-width: 511px) {
   .menu__icon {
-    z-index: 5;
+    z-index: 4;
     display: block;
     position: relative;
     width: 30px;
@@ -518,4 +687,165 @@ body._lock {
   .menu__link {
     font-size: 24px;
   }
+}
+
+/* ---------------modal-------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--second-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__form {
+  padding: 40px;
+}
+.modal__lable {
+  display: block;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 12px;
+  position: relative;
+}
+.modal__comment {
+  margin-bottom: 25px;
+}
+.modal__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 30px;
+
+  color: var(--text-color);
+}
+.modal__input {
+  width: 100%;
+  height: 40px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  padding: 0px 10px 0px 40px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal__input:focus {
+  outline: none;
+  border: 2px solid var(--second-color);
+}
+.modal__input:focus + svg {
+  fill: var(--second-color);
+}
+.modal__textarea {
+  height: 120px;
+  resize: none;
+  font-family: inherit;
+  padding-top: 12px;
+  padding-left: 16px;
+}
+.modal__textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.button-send {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 0px;
+  background: var(--second-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--background-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-send:hover,
+.button-send:focus {
+  outline: none;
+  transform: scale(1.04);
+  transition: all 0.07s ease-in-out;
+  box-shadow: 0 4px 6px var(--second-color);
+}
+
+.modal__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__checkbox-agree:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.modal__checkbox-agree a {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+.modal__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.modal__checkbox:checked + .modal__checkbox-agree::before {
+  background-color: var(--theme-color);
+  text-decoration: underline;
+  background-image: url(../images/icons/modal-icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.modal__checkbox:focus + .modal__checkbox-agree::before {
+  border: 1px solid var(--text-color);
 }
